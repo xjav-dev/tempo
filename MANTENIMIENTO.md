@@ -96,17 +96,18 @@ bash pruebas/ejecutar.sh          # CHROME=/ruta/a/chrome si no se usa el Chromi
 
 ## 5. Publicar en GitHub Pages
 
-1. Crea un repositorio **público** (GitHub Pages gratis solo funciona con repositorios públicos).
-2. Sube **todo el contenido de `publicar/`** a la raíz del repositorio, sin carpetas. Desde el iPad,
-   en dos tandas: primero todo menos los ocho `htdemucs.parteN.bin` y después esos ocho.
-3. Settings → Pages → «Deploy from a branch» → `main` y `/ (root)`.
-4. La app queda en `https://USUARIO.github.io/REPOSITORIO/`.
+El proyecto está en **https://github.com/xjav-dev/tempo** y GitHub Pages publica la rama `main` desde
+la raíz (Settings → Pages → «Deploy from a branch», `main`, `/ (root)`).
 
-`publicar/LEEME.txt` repite estos pasos para quien solo tenga la carpeta publicada.
+- `.nojekyll` hace que GitHub sirva los archivos tal cual.
+- `index.html` (raíz) es una portada que lleva a `publicar/`.
+- La app queda en **https://xjav-dev.github.io/tempo/publicar/** (y `https://xjav-dev.github.io/tempo/` lleva allí).
+- Para publicar una versión nueva basta con subir a `main` el proyecto construido (con `publicar/` al día).
+  La app se actualiza sola en los dispositivos la siguiente vez que se abre con conexión, porque la huella
+  cambia el nombre de la caché. Los trozos del modelo solo cambian si cambia `htdemucs.json`.
 
-**Actualizar una publicación:** sube los archivos nuevos sustituyendo los antiguos. La app se
-actualiza sola la siguiente vez que se abre con conexión, porque la huella cambia el nombre de la
-caché. Los trozos del modelo solo hay que subirlos si cambian (`htdemucs.json` lo dice).
+Sin el repositorio, también se puede publicar subiendo el contenido de `publicar/` a la raíz de otro
+repositorio público; `publicar/LEEME.txt` explica cómo hacerlo desde el iPad.
 
 ## 6. Probar en el Mac
 

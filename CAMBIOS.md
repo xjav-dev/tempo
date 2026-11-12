@@ -8,8 +8,9 @@ un error en una versión entregada se corrige con una versión nueva.
 ## [Sin publicar]
 
 ### Resumen
-- Proyecto en GitHub (`xjav-dev/tempo`): `.gitignore`, `README.md` y publicación automática de
-  `publicar/` en GitHub Pages con GitHub Actions (`.github/workflows/publicar.yml`).
+- Proyecto en GitHub (`xjav-dev/tempo`) con `.gitignore` y `README.md`. GitHub Pages publica la rama `main`
+  desde la raíz: `.nojekyll` (se sirve tal cual) e `index.html` de portada que lleva a `publicar/`.
+  La app queda en `https://xjav-dev.github.io/tempo/publicar/` (con `…/tempo/` como atajo).
 - `herramientas/entrega.sh` deja fuera del zip y de la revisión la carpeta `.git`.
 
 ### Migración de esquema
