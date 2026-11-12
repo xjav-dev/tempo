@@ -1,0 +1,29 @@
+LICENCIAS DE LOS COMPONENTES
+============================
+
+Tempo de Salón usa estos componentes de terceros. Cada uno conserva su licencia.
+
+- Demucs v4 «htdemucs» (Meta) — archivos htdemucs.parte1.bin … parte8.bin y htdemucs.json.
+  Pesos convertidos a ONNX por el proyecto demucs-js (Kevin Gibbons).
+  Según demucs-js, los pesos derivan de los publicados por Meta para uso personal y de investigación.
+  Usa la separación solo para uso personal.
+  https://github.com/facebookresearch/demucs · https://github.com/bakkot/demucs-js
+
+- demucs-js (Kevin Gibbons y colaboradores) — código de separación incluido en separador.js. Licencia MIT.
+
+- ONNX Runtime Web (Microsoft) — separador.js y ort-wasm-simd-threaded.jsep.*. Licencia MIT.
+  https://github.com/microsoft/onnxruntime
+
+- Basic Pitch (Spotify) — transcripción de notas, en bp.js. Licencia Apache 2.0.
+  https://github.com/spotify/basic-pitch-ts
+
+- TensorFlow.js (Google) — en bp.js. Licencia Apache 2.0.
+
+- OpenSheetMusicDisplay (PhonicScore) y VexFlow — dibujo de la partitura, en osmd.js. Licencia BSD-3-Clause / MIT.
+  https://github.com/opensheetmusicdisplay/opensheetmusicdisplay
+
+- SoundTouchJS — cambio de tempo sin cambiar el tono, en st.js. Licencia LGPL-2.1.
+  Código fuente: https://github.com/cutterbl/SoundTouchJS (paquete npm «soundtouchjs» 0.3.0, sin modificar).
+
+- Fuentes Bodoni Moda, Figtree e IBM Plex Mono — archivos .woff2. SIL Open Font License 1.1.
+  Distribuidas a través de Fontsource (https://fontsource.org).

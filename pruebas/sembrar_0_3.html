@@ -1,0 +1,14 @@
+<!doctype html><meta charset="utf-8"><title>Datos de la 0.3.0</title><body><script>
+// Deja en el navegador una biblioteca con el formato de la versión 0.3.0 (para probar la migración)
+window.sembrar = async () => {
+  const blob = await (await fetch('audio/prueba_mezcla.wav')).blob();
+  const key = 'prueba_mezcla.wav|' + blob.size;
+  localStorage.setItem('tempo-salon-v2', JSON.stringify({ settings: { prog: true, mode: 'track', start: 85, step: 3, every: 1, max: 100, limit: 0, gap: 5, vol: 0.7, lat: 180, keepLib: true },
+    order: [key], tracks: { [key]: { bpm: 120.08, bpmSrc: 'auto', dance: 'tango', target: 100, targetAuto: false, downbeat: 0.005, dbSrc: 'auto', mix: { 'prueba_mezcla.wav': { gain: 0.8, mute: false, solo: false } } } } }));
+  await new Promise((ok, mal) => { const r = indexedDB.open('tempo-salon', 1);
+    r.onupgradeneeded = () => { r.result.createObjectStore('songs', { keyPath: 'key' }); r.result.createObjectStore('trans', { keyPath: 'key' }); };
+    r.onsuccess = () => { const t = r.result.transaction('songs', 'readwrite'); t.objectStore('songs').put({ key, name: 'prueba_mezcla', stems: [{ kind: 'mix', fname: 'prueba_mezcla.wav', blob }] }); t.oncomplete = () => { r.result.close(); ok(); }; t.onerror = () => mal(t.error); };
+    r.onerror = () => mal(r.error); });
+  return key;
+};
+</script>

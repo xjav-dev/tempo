@@ -1,0 +1,65 @@
+TEMPO DE SALÓN · versión instalable
+====================================
+
+Una app web para ensayar bailes de salón con tus vídeos:
+- BPM de ensayo que eliges tú, sin cambiar el tono;
+- tramo y bucle guardados en cada vídeo;
+- separación en voz, batería, bajo y resto (en el propio iPad);
+- partitura de los canales que elijas, avanzando con el vídeo.
+
+Todo se procesa en el dispositivo. Los vídeos no se suben a ningún sitio.
+
+
+PUBLICARLA GRATIS EN GITHUB PAGES (desde el iPad)
+--------------------------------------------------
+
+1. Descomprime el zip: en la app Archivos, toca el zip y se crea la carpeta.
+
+2. En Safari, entra en github.com con tu cuenta (o crea una gratis).
+
+3. Crea un repositorio nuevo: botón «+» → New repository.
+   - Nombre: tempo-de-salon
+   - Visibilidad: Public (GitHub Pages gratis solo funciona con repositorios públicos)
+   - Pulsa «Create repository».
+
+4. Sube los archivos: en la página del repositorio, toca «uploading an existing file».
+   Hazlo en dos tandas para que no se corte la subida:
+   - Tanda 1: todos los archivos MENOS los ocho «htdemucs.parteN.bin». Pulsa «Commit changes».
+   - Tanda 2: los ocho «htdemucs.parte1.bin» … «htdemucs.parte8.bin» (unos 175 MB). «Commit changes».
+   Todos los archivos van en la raíz del repositorio, sin carpetas.
+
+5. Activa la web: Settings → Pages → Source: «Deploy from a branch»,
+   Branch: «main» y carpeta «/ (root)» → Save.
+   En uno o dos minutos la app estará en:
+       https://TU-USUARIO.github.io/tempo-de-salon/
+
+
+INSTALARLA EN EL IPAD
+---------------------
+
+1. Abre esa dirección en Safari.
+2. Botón Compartir → «Añadir a pantalla de inicio».
+3. Abre la app SIEMPRE desde el icono. La app del icono guarda sus vídeos y el modelo
+   aparte de Safari: si cargas algo en Safari, no aparece en la app del icono.
+4. La primera separación descarga el modelo (175 MB). Después todo funciona sin conexión.
+
+
+USO RÁPIDO
+----------
+
+- «Añadir vídeos»: elige vídeos de Fotos o Archivos. La app extrae el sonido y calcula el BPM.
+- −5 / −1 / +1 / +5 cambian el BPM de ensayo; «Original» vuelve al tempo del vídeo.
+- Tramo y bucle: «Marcar aquí» en el inicio y en el final, y «Repetir este tramo en bucle».
+- «Analizar canales y partitura»: deja la app abierta y la pantalla encendida. La primera vez
+  descarga el modelo (175 MB).
+- Bajo el vídeo, elige Original o los canales (Voz, Batería, Bajo, Resto): suenan esos y la partitura
+  muestra solo sus partes.
+- «Solo audio» oculta el vídeo.
+
+
+ACTUALIZAR
+----------
+
+Para poner una versión nueva, sube los archivos nuevos al mismo repositorio
+(reemplazando los antiguos). La app se actualiza sola la siguiente vez que la abres con conexión.
+No hace falta volver a subir los «htdemucs.parteN.bin» si no cambian.

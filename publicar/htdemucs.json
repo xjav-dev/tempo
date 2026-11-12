@@ -1,0 +1,47 @@
+{
+ "model": "htdemucs (Demucs v4, 4 pistas)",
+ "bytes": 174263526,
+ "sha256": "da9e5101ee0804d04933974b59d8aae9c862e80e14f2f24e7c74cae76bdbe748",
+ "parts": [
+  {
+   "file": "htdemucs.parte1.bin",
+   "bytes": 21782941,
+   "sha256": "4788f75c6646ba35b82a9a8e254c90dde5922c551da68280bc30e321f497092b"
+  },
+  {
+   "file": "htdemucs.parte2.bin",
+   "bytes": 21782941,
+   "sha256": "93222e90d59b7d1f9f82236e64528a5e9249ff71f6e290201e1ccf4cdd781112"
+  },
+  {
+   "file": "htdemucs.parte3.bin",
+   "bytes": 21782941,
+   "sha256": "c132d550034701d39c2dfdee4fd18d59a6681cab36b62ef000d21b5efe1001d6"
+  },
+  {
+   "file": "htdemucs.parte4.bin",
+   "bytes": 21782941,
+   "sha256": "5eba675c37a247c43db7d8016d3d85c6d0e0e5e7091d3959f56407e8e27acbf2"
+  },
+  {
+   "file": "htdemucs.parte5.bin",
+   "bytes": 21782941,
+   "sha256": "961c48eceec7e14c8c73a9344f1bfd49dfacbeeeae67c1359cad25f00db94f3b"
+  },
+  {
+   "file": "htdemucs.parte6.bin",
+   "bytes": 21782941,
+   "sha256": "c4ad91b978a3d90fda4f0faf53abf35206dcf0140a8edadbe79a9ee1a4b9b308"
+  },
+  {
+   "file": "htdemucs.parte7.bin",
+   "bytes": 21782941,
+   "sha256": "ebdfc257c44127ee3bdd3c233f61ef091b1b319432266f9d6c8c84da9f7c5605"
+  },
+  {
+   "file": "htdemucs.parte8.bin",
+   "bytes": 21782939,
+   "sha256": "8d5068a8b3f5f5c0fbd5471decc4934ee47bc77fc5cc55952cf00105474c9b99"
+  }
+ ]
+}

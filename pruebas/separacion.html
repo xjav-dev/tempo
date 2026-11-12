@@ -1,0 +1,18 @@
+<!doctype html><meta charset="utf-8"><title>Prueba de separación</title><body><script>
+// Separa la mezcla de prueba con el mismo separador que usa la app y compara cada pista con la original.
+window.prueba = async () => {
+  const dec = async (u) => { const ab = await (await fetch(u)).arrayBuffer(); return await new OfflineAudioContext(2, 1, 44100).decodeAudioData(ab); };
+  const mix = await dec('audio/prueba_mezcla.wav');
+  const w = new Worker('../publicar/separador.js', { type: 'module' });
+  const res = await new Promise((ok, mal) => {
+    w.onmessage = (e) => { const m = e.data; if (m.type === 'done') ok(m); else if (m.type === 'error') mal(new Error(m.message)); };
+    w.onerror = (e) => mal(new Error('worker: ' + e.message));
+    w.postMessage({ type: 'separate', id: 1, channels: [mix.getChannelData(0).slice(), mix.getChannelData(1).slice()] });
+  });
+  const L = res.length, out = new Float32Array(res.buffer), pista = (s) => out.subarray(s * 2 * L, s * 2 * L + L);
+  const corr = (a, b) => { let ab = 0, aa = 0, bb = 0; for (let i = 0; i < a.length; i++) { ab += a[i] * b[i]; aa += a[i] * a[i]; bb += b[i] * b[i]; } return +(ab / Math.sqrt(aa * bb || 1)).toFixed(3); };
+  const tabla = {};
+  for (const [s, nm] of res.names.entries()) { const ref = (await dec('audio/prueba_' + nm + '.wav')).getChannelData(0); tabla[nm] = corr(pista(s), ref); }
+  return { ep: res.ep, segundos: Math.round(res.seconds), coincidencia: tabla };
+};
+</script>

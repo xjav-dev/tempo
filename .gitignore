@@ -1,0 +1,5 @@
+fuente/node_modules/
+.tmp/
+pruebas/audio/
+__pycache__/
+.DS_Store
